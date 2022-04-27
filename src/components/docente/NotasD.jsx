@@ -12,12 +12,12 @@ import { ModalPostNotas } from './ModalPostNotas';
 const useStyles = makeStyles((theme) => ({
 
   root:{
-    width: '100vw',
+    width: '100%',
   },
 
   text:{
-    
     marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(3),
   },
 
   tableContainer:{
@@ -74,19 +74,19 @@ const handleOpenClose= (e)=>{
 
       <Container className={classess.mainContainer}>
        
-        <Box boxShadow={2} className={classess.tableContainer}>
-          <Container><Typography variant='caption' color='primary'>Periodo 1</Typography></Container>
+        <Box  className={classess.tableContainer}>
+        <Typography variant='h6' color='secondary'>Periodo 1</Typography>
           <TableNotas notas={data ? data?.data?.primer_periodo : null}/>
         </Box>
 
-        <Box boxShadow={2} className={classess.tableContainer}>
-        <Container><Typography variant='caption' color='primary'>Periodo 2</Typography></Container>
+        <Box  className={classess.tableContainer}>
+      <Typography variant='h6' color='secondary'>Periodo 2</Typography>
           <TableNotas notas={data ? data?.data?.segundo_periodo : null} />
           
         </Box>
 
-        <Box boxShadow={2} className={classess.tableContainer}>
-        <Container><Typography variant='caption' color='primary'>Periodo 3</Typography></Container>
+        <Box  className={classess.tableContainer}>
+      <Typography variant='h6' color='secondary'>Periodo 3</Typography>
           <TableNotas notas={data ? data?.data?.tercer_periodo : null} />
 
         </Box>

@@ -77,7 +77,7 @@ export const startRegister = (primer_nombre, segundo_nombre, primer_apellido, se
 }
 
 
-const setLogin = (credenciales) => {
+export const setLogin = (credenciales) => {
     return{
         type : types.AUTH_LOGIN_SUCCESS,
         payload : {

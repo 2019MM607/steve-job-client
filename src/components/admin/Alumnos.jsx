@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const useStyles = makeStyles ((theme) => ({
   root:{
-    width: '100vw',
+    width: '100%',
     
   },
 

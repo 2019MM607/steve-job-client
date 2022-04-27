@@ -10,7 +10,7 @@ import { loadDocentes } from '../../Redux/actions/docentes';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100vw',
+    width: '100%',
   },
 
   title: {

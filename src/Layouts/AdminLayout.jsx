@@ -62,6 +62,11 @@ export const AdminLayout = ({children}) => {
 
   }, [dispatch]);
 
+  const handleLogout = () => {
+    window.location.reload()
+  }
+  
+
   return (
 
 
@@ -79,7 +84,7 @@ export const AdminLayout = ({children}) => {
           <Chip label={user?.rol} style={{ marginLeft: '0.5rem' }} />
         </Container>
 
-        <PowerSettingsNewIcon color="primary" className={classess.logoutBtn} />
+        <PowerSettingsNewIcon color="primary" className={classess.logoutBtn} onClick={handleLogout} />
 
 
       </Box>

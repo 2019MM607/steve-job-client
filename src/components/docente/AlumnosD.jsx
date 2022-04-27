@@ -6,7 +6,7 @@ import {  fetchWithtoken } from '../../Helpers/Fetch';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100vw',
+    width: '100%',
   },
 
   title: {
@@ -49,7 +49,6 @@ export const AlumnosD = () => {
     setAlumnos(data.data)
    
   }
-
 
   useEffect(() => {
    loadAlumnos()

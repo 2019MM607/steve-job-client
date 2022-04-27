@@ -25,19 +25,7 @@ export const AppRouter = () => {
 
   const {user, isLogged}=useSelector(state => state.authReducer);
 
-  /*
-  const dispatch = useDispatch()
-  const verifyToken= async ()=>{
-    const data = await fetchWithtoken({},'GET', 'auth/verify')
-    const body = await data.json()
-    dispatch(startLogin(body.email, body.password))
-    console.log(body)
-  }
-
-  useEffect(() => {
-    verifyToken()
-  }, [dispatch]);
-  */
+  
   
   return (
     <BrowserRouter>

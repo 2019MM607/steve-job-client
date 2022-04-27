@@ -53,13 +53,17 @@ export const AlumnoLayout = ({ children }) => {
   const { user, isLogged } = useSelector(state => state.authReducer);
   const classess = useStyles()
 
+
+  const handleLogout = () => {
+    window.location.reload()
+  }
+  
   return (
     <div className={classess.root}>
 
       <Box boxShadow={3} className={classess.navbar}>
         <Container className={classess.links}>
-          <Link className={classess.link} to='/docentes' >Docentes</Link>
-          <Link className={classess.link} to='/alumnos'>Alumnos</Link>
+        <Typography className={classess.userName}>Notas</Typography>
         </Container>
 
         <Container className={classess.userInfo}>
@@ -68,7 +72,7 @@ export const AlumnoLayout = ({ children }) => {
           <Chip label={user?.rol} style={{ marginLeft: '0.5rem' }} />
         </Container>
 
-        <PowerSettingsNewIcon color="primary" className={classess.logoutBtn} />
+        <PowerSettingsNewIcon color="primary" className={classess.logoutBtn} onClick={handleLogout}/>
 
 
       </Box>

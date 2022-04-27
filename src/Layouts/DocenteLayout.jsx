@@ -1,8 +1,12 @@
 import { Avatar, Box, Chip, Container, makeStyles, Typography } from '@material-ui/core'
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, Outlet } from 'react-router-dom'
+import {setLogin} from '../Redux/actions/auth'
+
+
+
 import { loadDocentes } from '../Redux/actions/docentes'
 
 const useStyles = makeStyles((theme) => ({
@@ -48,6 +52,11 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export const DocenteLayout = ({children}) => {
+
+  const [initialState, setInitialState] = useState({
+    isLogged: false,
+    user: null,
+  });
   const {user, isLogged}=useSelector(state => state.authReducer);
   const dispatch = useDispatch()
   const classess = useStyles()
@@ -55,6 +64,10 @@ export const DocenteLayout = ({children}) => {
   useEffect(() => {
     dispatch(loadDocentes())
   }, [dispatch]);
+
+  const handleLogout = () => {
+    window.location.reload()
+  }
   
   return (
     <div className={classess.root}>
@@ -62,8 +75,6 @@ export const DocenteLayout = ({children}) => {
       <Box boxShadow={3} className={classess.navbar}>
         <Container className={classess.links}>
           <Link className={classess.link} to='/' >Alumnos</Link>
-          
-
         </Container>
 
         <Container className={classess.userInfo}>
@@ -72,7 +83,7 @@ export const DocenteLayout = ({children}) => {
           <Chip label={user?.rol} style={{ marginLeft: '0.5rem' }} />
         </Container>
 
-        <PowerSettingsNewIcon color="primary" className={classess.logoutBtn} />
+        <PowerSettingsNewIcon color="primary" className={classess.logoutBtn} onClick={handleLogout} />
 
       </Box>
 

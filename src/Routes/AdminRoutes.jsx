@@ -17,10 +17,12 @@ export const AdminRoutes = () => {
             <Route path="/" element={<AdminLayout />} >
                 
                 <Route index element={<Home />} />
+                
 
 
                 { /*docentes*/}
                 <Route path="/docentes" element={<Docentes />} />
+
               
 
                 {/*Alumnos*/}

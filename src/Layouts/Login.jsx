@@ -52,8 +52,8 @@ export const Login = () => {
   const dispatch = useDispatch()
   const formik = useFormik({
     initialValues: {
-      email: 'kevin.lara@stevejob.com',
-      password: 'kevin123'
+      email: '',
+      password: ''
     }
   });
 
@@ -70,8 +70,8 @@ export const Login = () => {
           Login
       </Typography>
       <div>
-        <TextField className={classes.textField} name='email' value={formik.values.email} onChange={formik.handleChange} label="Email" />
-        <TextField className={classes.textField} name='password' value={formik.values.password} onChange={formik.handleChange} label="Password" />
+        <TextField className={classes.textField} name='email' value={formik.values.email} onChange={formik.handleChange} label="Email" autoComplete='off' />
+        <TextField className={classes.textField} name='password' value={formik.values.password} onChange={formik.handleChange} label="Password" type='password' autoComplete='off'/>
       </div>
       <button onClick={handleLogin}  className={classes.button}>Login</button>
       <Link to='/auth/register'>registrarse</Link>
